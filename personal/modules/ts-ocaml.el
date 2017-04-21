@@ -60,6 +60,8 @@
 ;; (add-to-list 'load-path "~/.emacs.d/personal/vendor/ocp-indent")
 ;; (load-file (expand-file-name "~/.emacs.d/personal/vendor/ocp-indent/ocp-indent.el"))
 
+(prelude-require-packages '(ocp-indent))
+
 (require 'ocp-indent)
 
 (setq tuareg-indent-align-with-first-arg nil)

@@ -8,10 +8,14 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/orgs/tasks.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
+        ("u" "Upyun Todo" entry (file+headline "~/Dropbox/orgs/upyun.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/Dropbox/orgs/journal.org")
-         "* %?\nEntered on %U\n  %i\n  %a")))
+         "* %?\nEntered on %U\n  %i\n  %a")
+        ))
 
-(setq org-agenda-files (list "~/Dropbox/orgs/tasks.org"))
+(setq org-agenda-files (list "~/Dropbox/orgs/tasks.org"
+                             "~/Dropbox/orgs/upyun.org"))
 
 (setq org-log-done t)
 

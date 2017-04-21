@@ -6,11 +6,13 @@
           (lambda ()
             (racer-mode)
             (cargo-minor-mode)
+            (local-set-key (kbd "C-c C-t")
+                           'racer-describe)
             ))
 (add-hook 'racer-mode-hook #'eldoc-mode)
 (add-hook 'racer-mode-hook #'company-mode)
 
-(setq rust-format-on-save t)
+;; (setq rust-format-on-save t)
 (setq company-tooltip-align-annotations t)
 
 (provide 'ts-rust)

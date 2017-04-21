@@ -135,9 +135,9 @@
 (require 'ts-sql)
 (require 'ts-speedbar)
 (require 'ts-rust)
+(require 'ts-ocaml)
 
 
-;; (require 'ts-ocaml)
 ;; (require 'ts-c)
 ;; (require 'ts-android)
 ;; (require 'ts-go)
