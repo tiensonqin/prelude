@@ -61,6 +61,14 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
          (setq command (replace-regexp-in-string "%" (mapconcat 'identity (dired-get-marked-files) " ") command nil t))))
   (shell-command command output-buffer error-buffer))
 
+(defun ocaml-make-command ()
+  (interactive)
+  (with-output-to-temp-buffer "*ocaml-compile*"
+    (shell-command "./make")
+    (pop-to-buffer "*ocaml-compile*"))
+  
+  (call-process-shell-command "./make" nil 0))
+
 (defun jao-toggle-selective-display (column)
   (interactive "P")
   (set-selective-display

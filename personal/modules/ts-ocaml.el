@@ -74,14 +74,36 @@
 
    (sp-with-modes 'tuareg-mode
      ;; disable ', it's the quote character!
-     (sp-local-pair "'" nil :actions nil))
+     (sp-local-pair "'" nil :actions nil)
+     (sp-local-pair "`" nil :actions nil))
 
    (which-function-mode -1)
+
+   (setq tuareg-use-smie nil)
 
    (when (functionp 'prettify-symbols-mode)
      (prettify-symbols-mode -1))
 
+   (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
+   (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)
    (define-key tuareg-mode-map (kbd "\C-c\C-h") 'merlin-document)
+   (define-key tuareg-mode-map (kbd "\C-c\C-m") 'ocaml-make-command)
+   (defun merlin-switch ()
+     (interactive)
+     (let* ((cur buffer-file-name)
+            (file (cond
+                   ((string-suffix-p ".mli" cur) (substring cur 0 (- (length cur) 1)))
+                   ((string-suffix-p ".ml" cur) (concat cur "i"))
+                   (t (error (concat "Not an ocaml source file: " cur))))))
+       (if (file-exists-p file)
+           (merlin--goto-file-and-point (list (cons 'file file)))
+         (error (concat "File does not exist: " file)))))
+
+   (define-key merlin-mode-map (kbd "C-c m") 'merlin-switch)
+
+   ;;; opens up an interface when present
+   (setq merlin-locate-preference 'ml)
+   (setq merlin-locate-in-new-window 'never)
    ;; See README
    ;;(setq tuareg-match-patterns-aligned t)
    ;; (electric-indent-mode 0)

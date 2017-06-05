@@ -122,6 +122,14 @@
 
 (setq sp-highlight-pair-overlay nil)
 
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
+
+;; google translate
+(global-set-key (kbd "C-c g t") 'google-translate-at-point)
+(global-set-key (kbd "C-c g q") 'google-translate-query-translate)
+(setq google-translate-default-source-language "en")
+(setq google-translate-default-target-language "zh-CN")
+
 (require 'ts-defuns)
 (require 'ts-bindings)
 (require 'ts-org)
@@ -136,9 +144,8 @@
 (require 'ts-speedbar)
 (require 'ts-rust)
 (require 'ts-ocaml)
+(require 'ts-c)
 
-
-;; (require 'ts-c)
 ;; (require 'ts-android)
 ;; (require 'ts-go)
 ;; (require 'ts-elixir)

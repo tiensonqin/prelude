@@ -31,7 +31,7 @@
 (require 'company-c-headers)
 
 (require 'rtags) ;; optional, must have rtags installed
-(cmake-ide-setup)
+;; (cmake-ide-setup)
 
 ;; ;; add completion source for irony mode
 ;; (eval-after-load 'company
@@ -98,7 +98,8 @@
   (call-interactively (if (use-rtags t) 'rtags-imenu 'helm-imenu)))
 
 (define-key c-mode-base-map (kbd "M-.") (function tags-find-symbol-at-point))
-(define-key c-mode-base-map (kbd "M-,") (function tags-find-references-at-point))
+(define-key c-mode-base-map (kbd "M-,") (function rtags-location-stack-back))
+(define-key c-mode-base-map (kbd "C-M-i") (function tags-find-references-at-point))
 ;; (define-key c-mode-base-map (kbd "M-;") (function tags-find-file))
 (define-key c-mode-base-map (kbd "C-.") (function tags-find-symbol))
 (define-key c-mode-base-map (kbd "C-,") (function tags-find-references))
@@ -114,5 +115,7 @@
 ;; (define-key global-map (kbd "M-i") (function tags-imenu))
 
 (add-hook 'c++-mode-hook 'flycheck-mode)
+
+(setq rtags-use-helm t)
 
 (provide 'ts-c)
