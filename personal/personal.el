@@ -130,6 +130,18 @@
 (setq google-translate-default-source-language "en")
 (setq google-translate-default-target-language "zh-CN")
 
+;; mermaid
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/mermaid-mode")
+(load-file "~/.emacs.d/personal/vendor/mermaid-mode/mermaid.el")
+
+;; image+
+;; (eval-after-load 'image
+;;   '(progn
+;;      (require 'image+)
+;;      (imagex-global-sticky-mode 1)
+;;      (imagex-auto-adjust-mode 1)
+;;      ))
+
 (require 'ts-defuns)
 (require 'ts-bindings)
 (require 'ts-org)
@@ -145,6 +157,8 @@
 (require 'ts-rust)
 (require 'ts-ocaml)
 (require 'ts-c)
+
+(setq erc-autojoin-channels-alist '(("freenode.net" "#ocaml")))
 
 ;; (require 'ts-android)
 ;; (require 'ts-go)

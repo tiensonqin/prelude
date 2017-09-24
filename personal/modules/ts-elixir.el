@@ -8,6 +8,12 @@
 (require 'alchemist)
 (setq alchemist-help-ansi-color t)
 
+(add-hook
+ 'alchemist-mode-hook
+ (lambda ()
+   (define-key alchemist-mode-map (kbd "\C-c\C-h") 'alchemist-help-search-at-point)
+   ))
+
 ;; enable elixir-mix
 ;; (global-elixir-mix-mode)
 (provide 'ts-elixir)
