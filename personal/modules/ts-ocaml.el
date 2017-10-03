@@ -111,6 +111,6 @@
    ;; (electric-indent-mode 0)
    ))
 
-(load "~/.emacs.d/personal/vendor/PG/generic/proof-site")
+;; (load "~/.emacs.d/personal/vendor/PG/generic/proof-site")
 
 (provide 'ts-ocaml)

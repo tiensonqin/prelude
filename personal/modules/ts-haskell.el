@@ -59,12 +59,12 @@
                                (ghc-init)
                                (structured-haskell-mode t)))
 
-;; hindent
-(add-to-list 'load-path "/opt/haskell/hindent/elisp")
-(require 'hindent)
-(setq hindent-style "gibiansky")
-(add-hook 'haskell-mode-hook #'hindent-mode)
-(add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
+;; ;; hindent
+;; (add-to-list 'load-path "/opt/haskell/hindent/elisp")
+;; (require 'hindent)
+;; (setq hindent-style "gibiansky")
+;; (add-hook 'haskell-mode-hook #'hindent-mode)
+;; (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
 
 (require 'haskell-debug)
 

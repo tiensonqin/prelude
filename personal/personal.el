@@ -7,9 +7,10 @@
              '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(disable-theme 'zenburn)
+;; (disable-theme 'zenburn)
 ;; (require 'color-theme)
-(load-theme 'solarized-dark)
+;; (load-theme 'solarized-light)
+(load-theme 'zenburn)
 
 ;; Gotta do UTF-8
 (require 'un-define "un-define" t)
@@ -131,8 +132,8 @@
 (setq google-translate-default-target-language "zh-CN")
 
 ;; mermaid
-(add-to-list 'load-path "~/.emacs.d/personal/vendor/mermaid-mode")
-(load-file "~/.emacs.d/personal/vendor/mermaid-mode/mermaid.el")
+;; (add-to-list 'load-path "~/.emacs.d/personal/vendor/mermaid-mode")
+;; (load-file "~/.emacs.d/personal/vendor/mermaid-mode/mermaid.el")
 
 ;; image+
 ;; (eval-after-load 'image
@@ -154,9 +155,10 @@
 (require 'ts-image)
 (require 'ts-sql)
 (require 'ts-speedbar)
-(require 'ts-rust)
+;; (require 'ts-rust)
 (require 'ts-ocaml)
 (require 'ts-c)
+(require 'ts-ats)
 
 (setq erc-autojoin-channels-alist '(("freenode.net" "#ocaml")))
 

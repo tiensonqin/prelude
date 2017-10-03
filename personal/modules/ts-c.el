@@ -1,4 +1,4 @@
-(prelude-require-packages '(helm-gtags irony irony-eldoc company-c-headers))
+(prelude-require-packages '(helm-gtags irony irony-eldoc company-c-headers rtags))
 
 ;; copy from http://tuhdo.github.io/c-ide.html
 ;; (setq
