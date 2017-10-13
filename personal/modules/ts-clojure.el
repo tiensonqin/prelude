@@ -1,8 +1,4 @@
-(prelude-require-packages '(clj-refactor typed-clojure-mode inf-clojure))
-
-(add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
-
-(add-hook 'clojure-mode-hook 'typed-clojure-mode)
+(prelude-require-packages '(inf-clojure))
 
 ;; kibit
 ;; Teach compile the syntax of the kibit output
@@ -70,17 +66,6 @@ Display the results in a hyperlinked *compilation* buffer."
                        (jj-cider-eval-and-get-value
                         (jj-cider-format-with-out-str-pprint-eval last-sexp))))))))
 
-;; clj-refactor
-(add-hook 'clojure-mode-hook (lambda ()
-                               (clj-refactor-mode 1)
-                               ;; insert keybinding setup here
-                               (cljr-add-keybindings-with-prefix "C-c C-m")
-                               (yas-minor-mode 1) ; for adding require/use/import
-                               (local-set-key (kbd "C-o e")
-                                              'jj-cider-eval-last-sexp-and-pprint-append)
-                               (local-set-key (kbd "C-x C-a")
-                                              'cider-eval-last-sexp-and-append)
-                               ))
 
 (add-hook 'after-init-hook 'global-company-mode)
 

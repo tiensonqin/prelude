@@ -5,12 +5,12 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;; (add-to-list 'package-archives
+;;              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ;; (disable-theme 'zenburn)
 ;; (require 'color-theme)
-;; (load-theme 'solarized-light)
-(load-theme 'zenburn)
+(load-theme 'solarized-dark)
+;; (load-theme 'zenburn)
 
 ;; Gotta do UTF-8
 (require 'un-define "un-define" t)
