@@ -268,42 +268,6 @@ Called by `imenu--generic-function'."
               (set-match-data (list def-beg def-end)))))
         (goto-char start)))))
 
-(defun cljs-repl ()
-  (interactive)
-  ;; (run-clojure "java -cp /home/tienson/codes/js/source/clojurescript/target/clojurescript-0.0-SNAPSHOT-standalone.jar:react-0.13.1-0.jar:src clojure.main script/repl.clj")
-  (run-clojure "lein trampoline run -m clojure.main script/brepl.clj")
-  )
-
-(defun figwheel-bare-repl ()
-  (interactive)
-  ;; (run-clojure "java -cp /home/tienson/codes/js/source/clojurescript/target/clojurescript-0.0-SNAPSHOT-standalone.jar:react-0.13.1-0.jar:src clojure.main script/repl.clj")
-  (run-clojure "lein trampoline run -m clojure.main script/figwheel.clj")
-  )
-
-(defun figwheel-repl ()
-  (interactive)
-  (run-clojure "lein figwheel"))
-
-;; (add-hook 'clojurescript-mode-hook #'inf-clojure-minor-mode)
-(add-hook 'inf-clojure-mode-hook #'smartparens-strict-mode)
-(add-hook 'inf-clojure-mode-hook #'rainbow-mode)
-(add-hook 'inf-clojure-mode-hook 'clojure-font-lock-setup)
-
-(defun cider-figwheel-repl ()
-  (interactive)
-  (save-some-buffers)
-  (with-current-buffer (cider-current-repl-buffer)
-    (goto-char (point-max))
-    (insert "(require 'figwheel-sidecar.repl-api)
-             (figwheel-sidecar.repl-api/cljs-repl)")
-    (cider-repl-return)))
-
-(defun ambly-repl ()
-  (interactive)
-  (run-clojure "lein trampoline run -m clojure.main script/ambly.clj"))
-
-(global-set-key (kbd "C-c C-f") 'cider-figwheel-repl)
-
 (add-hook 'cider-mode-hook #'eldoc-mode)
 
 (setq enable-local-variables nil)
