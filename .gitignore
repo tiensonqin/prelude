@@ -23,4 +23,4 @@ tramp
 /var/pcache
 .emacs.desktop
 .emacs.desktop.lock
-/ac-comphist.dat
+network-security.data
