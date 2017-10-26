@@ -159,6 +159,7 @@
 (require 'ts-ocaml)
 (require 'ts-c)
 (require 'ts-ats)
+(require 'ts-reason)
 
 (setq erc-autojoin-channels-alist '(("freenode.net" "#ocaml")))
 
@@ -172,3 +173,9 @@
 ;; (add-hook 'magit-mode-hook 'turn-on-magit-flow)
 ;; (require 'ts-auto-complete)
 ;; (require 'ts-smartparens)
+
+;; temp workaround
+(setq projectile-mode-line
+      '(:eval (format " Projectile[%s]"
+                      (projectile-project-name))))
+(setq create-lockfiles nil)

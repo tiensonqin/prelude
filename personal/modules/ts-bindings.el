@@ -27,5 +27,6 @@
 
 (global-set-key (kbd "C-'") #'imenu-list-minor-mode)
 (global-set-key (kbd "C-c C-s") 'speak)
+(global-set-key (kbd "s-e") 'mc/edit-lines)
 
 (provide 'ts-bindings)
