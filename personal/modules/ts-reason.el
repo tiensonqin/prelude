@@ -60,7 +60,4 @@
 ;;     (merlin-iedit-occurrences)))
 ;; (define-key merlin-mode-map (kbd "C-c C-e") 'evil-custom-merlin-iedit)
 
-(add-hook 'reason-mode-hook (lambda ()
-                              (add-hook 'before-save-hook 'refmt-before-save)))
-
 (provide 'ts-reason)

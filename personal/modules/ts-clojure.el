@@ -272,4 +272,6 @@ Called by `imenu--generic-function'."
 
 (setq enable-local-variables nil)
 
+(setq nrepl-log-messages t)
+
 (provide 'ts-clojure)
