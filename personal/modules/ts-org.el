@@ -8,17 +8,19 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/Dropbox/orgs/tasks.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
-        ("u" "Upyun Todo" entry (file+headline "~/Dropbox/orgs/upyun.org" "Tasks")
+        ("h" "Hidiffernt Todo" entry (file+headline "~/codes/projects/hidifferent/backend/docs/todo.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/Dropbox/orgs/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")
         ))
 
 (setq org-agenda-files (list "~/Dropbox/orgs/tasks.org"
-                             "~/Dropbox/orgs/upyun.org"))
+                             "~/codes/projects/hidifferent/backend/docs/todo.org"))
 
 (setq org-log-done t)
 
 (global-set-key "\C-cc" 'org-capture)
+
+(require 'ox-org)
 
 (provide 'ts-org)

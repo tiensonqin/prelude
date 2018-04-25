@@ -274,4 +274,6 @@ Called by `imenu--generic-function'."
 
 (setq nrepl-log-messages t)
 
+(setf inf-clojure-lein-cmd '("localhost" . 5555))
+
 (provide 'ts-clojure)

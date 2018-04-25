@@ -113,12 +113,12 @@
 
 (opam-auto-tools-setup)
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
-;; ## added by OPAM user-setup for emacs / tuareg ## 4d12dcb90df8f981d3b579e1f8f897ea ## you can edit, but keep this line
+;; ## added by OPAM user-setup for emacs / tuareg ## 0294b147f5233bb200d00ae600a0b8f9 ## you can edit, but keep this line
 ;; Set to autoload tuareg from its original switch when not found in current
 ;; switch (don't load tuareg-site-file as it adds unwanted load-paths)
 (when (not (member "tuareg" opam-tools-installed))
   (defun opam-tuareg-autoload (fct file doc args)
-    (let ((load-path (cons "/home/tienson/.opam/4.06.0/share/emacs/site-lisp" load-path)))
+    (let ((load-path (cons "/home/tienson/.opam/4.05.0/share/emacs/site-lisp" load-path)))
       (load file))
     (apply fct args))
   (defun tuareg-mode (&rest args)
@@ -136,12 +136,12 @@
   (dolist (ext '(".cmo" ".cmx" ".cma" ".cmxa" ".cmxs" ".cmt" ".cmti" ".cmi" ".annot"))
     (add-to-list 'completion-ignored-extensions ext)))
 ;; ## end of OPAM user-setup addition for emacs / tuareg ## keep this line
-;; ## added by OPAM user-setup for emacs / ocp-indent ## 0b5406a9e0d77d8920159bada5d331f4 ## you can edit, but keep this line
+;; ## added by OPAM user-setup for emacs / ocp-indent ## ea5b56b1521538f50c8466758f684d4f ## you can edit, but keep this line
 ;; Load ocp-indent from its original switch when not found in current switch
 (when (not (assoc "ocp-indent" opam-tools-installed))
-  (autoload 'ocp-setup-indent "/home/tienson/.opam/4.06.0/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Tuareg mode")
-  (autoload 'ocp-indent-caml-mode-setup "/home/tienson/.opam/4.06.0/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Caml mode")
+  (autoload 'ocp-setup-indent "/home/tienson/.opam/4.05.0/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Tuareg mode")
+  (autoload 'ocp-indent-caml-mode-setup "/home/tienson/.opam/4.05.0/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Caml mode")
   (add-hook 'tuareg-mode-hook 'ocp-setup-indent t)
   (add-hook 'caml-mode-hook 'ocp-indent-caml-mode-setup  t)
-  (setq ocp-indent-path "/home/tienson/.opam/4.06.0/bin/ocp-indent"))
+  (setq ocp-indent-path "/home/tienson/.opam/4.05.0/bin/ocp-indent"))
 ;; ## end of OPAM user-setup addition for emacs / ocp-indent ## keep this line

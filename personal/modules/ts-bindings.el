@@ -11,6 +11,9 @@
 (global-set-key (kbd "M-g") 'goto-line)
 
 (global-set-key (kbd "C-c C-d m") 'erlang-man-module)
+;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
+(global-set-key (kbd "C-c C-s") (lambda () (interactive)
+                                  (helm-swoop :$query "defc")))
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
 (define-key global-map (kbd "C-j") 'newline-and-indent)
@@ -26,7 +29,7 @@
 (define-key global-map (kbd "M-(") 'paredit-wrap-round)
 
 (global-set-key (kbd "C-'") #'imenu-list-minor-mode)
-(global-set-key (kbd "C-c C-s") 'speak)
+;; (global-set-key (kbd "C-c C-s") 'speak)
 (global-set-key (kbd "s-e") 'mc/edit-lines)
 
 (provide 'ts-bindings)
