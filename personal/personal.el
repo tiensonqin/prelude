@@ -90,7 +90,7 @@
 (setq ring-bell-function #'ignore)
 (setq ns-use-native-fullscreen nil)
 
-(setq erc-autojoin-channels-alist '(("freenode.net" "#haskell" "#erlang" "#clojure")))
+;; (setq erc-autojoin-channels-alist '(("freenode.net" "#haskell" "#erlang" "#clojure")))
 
 ;; (global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
 
@@ -148,11 +148,11 @@
 (require 'ts-defuns)
 (require 'ts-bindings)
 (require 'ts-org)
-(require 'ts-javascript)
+;; (require 'ts-javascript)
 (require 'ts-clojure)
 (require 'ts-haskell)
 (require 'ts-scheme)
-(require 'ts-java)
+;; (require 'ts-java)
 (require 'ts-erlang)
 (require 'ts-image)
 (require 'ts-sql)
@@ -160,10 +160,10 @@
 ;; (require 'ts-rust)
 (require 'ts-ocaml)
 (require 'ts-c)
-(require 'ts-ats)
-(require 'ts-reason)
+;; (require 'ts-ats)
+;; (require 'ts-reason)
 
-(setq erc-autojoin-channels-alist '(("freenode.net" "#ocaml")))
+;; (setq erc-autojoin-channels-alist '(("freenode.net" "#ocaml")))
 
 ;; (require 'ts-android)
 ;; (require 'ts-go)
@@ -181,3 +181,7 @@
       '(:eval (format " Projectile[%s]"
                       (projectile-project-name))))
 (setq create-lockfiles nil)
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)

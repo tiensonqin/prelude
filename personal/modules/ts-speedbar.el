@@ -2,6 +2,11 @@
 
 (require 'speedbar)
 
+;; imenu list
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/imenu-list")
+(require 'imenu-list)
+
+
 ;; (setq speedbar-smart-directory-expand-flag t)
 
 (setq sr-speedbar-auto-refresh nil)

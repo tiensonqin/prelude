@@ -12,7 +12,7 @@
 
 (global-set-key (kbd "C-c C-d m") 'erlang-man-module)
 ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
-(global-set-key (kbd "C-c C-s") (lambda () (interactive)
+(global-set-key (kbd "C-c C-v") (lambda () (interactive)
                                   (helm-swoop :$query "defc")))
 
 (define-key global-map (kbd "RET") 'newline-and-indent)

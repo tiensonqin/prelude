@@ -1,6 +1,7 @@
 (prelude-require-packages '(ocp-indent))
 
 (require 'ocp-indent)
+(require 'merlin-imenu)
 
 (add-to-list 'load-path "~/.emacs.d/personal/vendor/ocamlformat")
 
@@ -25,6 +26,8 @@
      (sp-local-pair "`" nil :actions nil))
 
    (which-function-mode -1)
+
+   (merlin-use-merlin-imenu)
 
    ;; (setq tuareg-use-smie nil)
 
