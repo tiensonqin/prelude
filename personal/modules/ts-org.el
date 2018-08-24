@@ -1,3 +1,10 @@
+;; asciidoc export
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/org-asciidoc")
+(require 'ox-asciidoc)
+
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/adoc-mode")
+(require 'adoc-mode)
+
 ;; Set to the location of your Org files on your local system
 (setq org-directory "~/Dropbox/orgs")
 ;; Set to the name of the file where new notes will be stored

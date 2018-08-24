@@ -38,6 +38,8 @@
 (set-frame-font "Monaco-13")
 (setq default-frame-alist '((font . "Monaco-13")))
 
+(setq package-check-signature nil)
+
 ;;; registers
 ;; open init file C-x r j e
 (set-register ?e (cons 'file "~/.emacs.d/personal/personal.el"))

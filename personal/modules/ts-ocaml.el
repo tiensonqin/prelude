@@ -15,7 +15,7 @@
  (lambda ()
    (define-key merlin-mode-map (kbd "C-c n") 'ocamlformat)
    (add-hook 'before-save-hook 'ocamlformat-before-save)
-   
+
    (setq show-trailing-whitespace t)
    (setq indicate-empty-lines t)
 
@@ -31,10 +31,10 @@
    (when (functionp 'prettify-symbols-mode)
      (prettify-symbols-mode -1))
 
-   ;; (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
-   ;; (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)
-   ;; (define-key merlin-mode-map (kbd "M-t") 'merlin-type-enclosing)
-   ;; (define-key tuareg-mode-map (kbd "\C-c\C-h") 'merlin-document)
+   (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
+   (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)
+   (define-key merlin-mode-map (kbd "M-t") 'merlin-type-enclosing)
+   (define-key tuareg-mode-map (kbd "\C-c\C-h") 'merlin-document)
    (define-key tuareg-mode-map (kbd "\C-c\C-m") 'ocaml-make-command)
 
    (defun merlin-switch ()
@@ -57,11 +57,11 @@
 
 ;; (load "~/.emacs.d/personal/vendor/PG/generic/proof-site")
 
-(require 'lsp-mode)
-(require 'lsp-ocaml)
+;; (require 'lsp-mode)
+;; (require 'lsp-ocaml)
 
-(add-hook 'tuareg-mode-hook #'lsp-ocaml-enable)
-(add-hook 'caml-mode-hook #'lsp-ocaml-enable)
-(add-hook 'reason-mode-hook #'lsp-ocaml-enable)
+;; (add-hook 'tuareg-mode-hook #'lsp-ocaml-enable)
+;; (add-hook 'caml-mode-hook #'lsp-ocaml-enable)
+;; (add-hook 'reason-mode-hook #'lsp-ocaml-enable)
 
 (provide 'ts-ocaml)
