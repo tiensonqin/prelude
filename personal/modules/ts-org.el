@@ -6,27 +6,32 @@
 ;; (require 'adoc-mode)
 
 ;; Set to the location of your Org files on your local system
-(setq org-directory "~/Dropbox/orgs")
-;; Set to the name of the file where new notes will be stored
-(setq org-mobile-inbox-for-pull "~/Dropbox/orgs/from-mobile.org")
-;; Set to <your Dropbox root directory>/MobileOrg.
-(setq org-mobile-directory "~/Dropbox/orgs")
+(setq org-directory "~/Sync/orgs")
+
+(setq org-todo-keywords
+      '((sequence "TODO(!)" "DOING(!)" "DONE")))
+
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-h n") 'org-insert-heading-after-current)))
+
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/orgs/tasks.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/Sync/orgs/tasks.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
-        ("h" "Hidiffernt Todo" entry (file+headline "~/codes/projects/hidifferent/backend/docs/todo.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
-        ("j" "Journal" entry (file+datetree "~/Dropbox/orgs/journal.org")
-         "* %?\nEntered on %U\n  %i\n  %a")
-        ))
+        ("h" "Reading" entry (file+headline "~/Sync/orgs/notes/read.org" "Read")
+         "* TODO %?\n  %i\n  %a")))
 
-(setq org-agenda-files (list "~/Dropbox/orgs/tasks.org"
-                             "~/codes/projects/hidifferent/backend/docs/todo.org"))
+(setq org-agenda-files (list "~/Sync/orgs/tasks.org"
+                             "~/Sync/orgs/notes/read.org"))
 
 (setq org-log-done t)
 
 (global-set-key "\C-cc" 'org-capture)
+
+(setq org-enforce-todo-dependencies t)
+(setq org-enforce-todo-checkbox-dependencies t)
 
 (require 'ox-org)
 

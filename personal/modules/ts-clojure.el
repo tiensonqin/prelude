@@ -274,6 +274,16 @@ Called by `imenu--generic-function'."
 
 (setq nrepl-log-messages t)
 
-(setf inf-clojure-lein-cmd '("localhost" . 5555))
+;; (setf inf-clojure-lein-cmd '("localhost" . 5555))
+(defun jp-around-cider-find-var (fn &rest args)
+  (let* ((sess (sesman-current-session 'CIDER))
+         (orig-buf (current-buffer))
+         (result (apply fn args)))
+    (unless (eq orig-buf (current-buffer))
+      (sesman-link-with-buffer (current-buffer) sess))
+    result))
+
+;; Workaround for https://github.com/clojure-emacs/cider/issues/2408#issuecomment-413768401
+(advice-add #'cider--find-var :around #'jp-around-cider-find-var)
 
 (provide 'ts-clojure)
