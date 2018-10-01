@@ -5,6 +5,10 @@
 ;; (add-to-list 'load-path "~/.emacs.d/personal/vendor/adoc-mode")
 ;; (require 'adoc-mode)
 
+(add-to-list 'load-path "~/.emacs.d/personal/vendor/org-present")
+(require 'org-present)
+
+
 ;; Set to the location of your Org files on your local system
 (setq org-directory "~/Sync/orgs")
 
@@ -34,5 +38,16 @@
 (setq org-enforce-todo-checkbox-dependencies t)
 
 (require 'ox-org)
+(require 'ox-beamer)
+(require 'ox-latex)
+(setq org-export-allow-bind-keywords t)
+(setq org-latex-listings 'minted)
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+(org-babel-do-load-languages 'org-babel-load-languages '((sh . t) (python . t) (C . t) (ruby . t) (js . t) (clojure . t) (ocaml . t) (haskell . t)))
+(setq org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
 
 (provide 'ts-org)

@@ -34,6 +34,8 @@
    (when (functionp 'prettify-symbols-mode)
      (prettify-symbols-mode -1))
 
+   (merlin-mode 1)
+
    (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
    (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)
    (define-key merlin-mode-map (kbd "M-t") 'merlin-type-enclosing)
