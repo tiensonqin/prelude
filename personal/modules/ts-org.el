@@ -43,11 +43,17 @@
 (setq org-export-allow-bind-keywords t)
 (setq org-latex-listings 'minted)
 (add-to-list 'org-latex-packages-alist '("" "minted"))
-(org-babel-do-load-languages 'org-babel-load-languages '((sh . t) (python . t) (C . t) (ruby . t) (js . t) (clojure . t) (ocaml . t) (haskell . t)))
+(org-babel-do-load-languages 'org-babel-load-languages '((python . t) (C . t) (ruby . t) (js . t) (clojure . t) (ocaml . t) (haskell . t)))
+;; (org-babel-do-load-languages 'org-babel-load-languages '((sh . t) (python . t) (C . t) (ruby . t) (js . t) (clojure . t) (ocaml . t) (haskell . t)))
 (setq org-latex-pdf-process
       '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
+
+(require 'cl)   ; for delete*
+(setq org-emphasis-alist
+      (cons '("+" '(:strike-through t :foreground "gray"))
+            (delete* "+" org-emphasis-alist :key 'car :test 'equal)))
 
 (provide 'ts-org)

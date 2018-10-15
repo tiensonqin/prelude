@@ -44,9 +44,8 @@
 ;; open init file C-x r j e
 (set-register ?e (cons 'file "~/.emacs.d/personal/personal.el"))
 
-;; set default browser to chromium
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "chromium")
+      browse-url-generic-program "firefox")
 
 ;; quiet, please! No dinging!
 (setq visible-bell t)
@@ -157,11 +156,11 @@
 (require 'ts-image)
 (require 'ts-sql)
 (require 'ts-speedbar)
-;; (require 'ts-rust)
+(require 'ts-rust)
 (require 'ts-ocaml)
 (require 'ts-c)
 ;; (require 'ts-ats)
-;; (require 'ts-reason)
+(require 'ts-reason)
 
 ;; (setq erc-autojoin-channels-alist '(("freenode.net" "#ocaml")))
 

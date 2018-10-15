@@ -14,8 +14,8 @@
 (add-hook
  'tuareg-mode-hook
  (lambda ()
-   (define-key merlin-mode-map (kbd "C-c n") 'ocamlformat)
-   (add-hook 'before-save-hook 'ocamlformat-before-save)
+   ;; (define-key merlin-mode-map (kbd "C-c n") 'ocamlformat)
+   ;; (add-hook 'before-save-hook 'ocamlformat-before-save)
 
    (setq show-trailing-whitespace t)
    (setq indicate-empty-lines t)

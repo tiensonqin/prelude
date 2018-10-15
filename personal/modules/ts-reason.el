@@ -9,7 +9,7 @@
    an error"
   (car (ignore-errors (apply 'process-lines (split-string cmd)))))
 
-(let* ((refmt-bin (shell-cmd "which refmt"))
+(let* ((refmt-bin (shell-cmd "which bsrefmt"))
        (merlin-bin (shell-cmd "which ocamlmerlin"))
        (merlin-base-dir (when merlin-bin
                           (replace-regexp-in-string "bin/ocamlmerlin$" "" merlin-bin))))
