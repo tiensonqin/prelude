@@ -45,7 +45,7 @@
 (set-register ?e (cons 'file "~/.emacs.d/personal/personal.el"))
 
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+      browse-url-generic-program "chromium")
 
 ;; quiet, please! No dinging!
 (setq visible-bell t)
@@ -151,7 +151,7 @@
 (require 'ts-clojure)
 (require 'ts-haskell)
 (require 'ts-scheme)
-;; (require 'ts-java)
+(require 'ts-java)
 (require 'ts-erlang)
 (require 'ts-image)
 (require 'ts-sql)
@@ -165,7 +165,7 @@
 ;; (setq erc-autojoin-channels-alist '(("freenode.net" "#ocaml")))
 
 ;; (require 'ts-android)
-;; (require 'ts-go)
+(require 'ts-go)
 ;; (require 'ts-elixir)
 ;; (require 'ts-html)
 ;; (require 'ts-scala)
@@ -184,3 +184,7 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(add-hook 'makefile-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode t)))

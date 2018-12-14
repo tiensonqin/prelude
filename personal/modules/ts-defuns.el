@@ -149,4 +149,12 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
   (write-region (point-min) (point-max) "/tmp/speak_content_buffer")
   (shell-command "tts -f /tmp/speak_content_buffer &"))
 
+(defun clear-comint-buffer ()
+  (interactive)
+  (let ((old-max comint-buffer-maximum-size))
+    (setq comint-buffer-maximum-size 0)
+    (comint-truncate-buffer)
+    (setq comint-buffer-maximum-size old-max)
+    (goto-char (point-max))))
+
 (provide 'ts-defuns)
