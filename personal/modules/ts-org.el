@@ -56,4 +56,17 @@
       (cons '("+" '(:strike-through t :foreground "gray"))
             (delete* "+" org-emphasis-alist :key 'car :test 'equal)))
 
+;; active Org-babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(;; other Babel languages
+   (plantuml . t)))
+
+(setq org-plantuml-jar-path
+      (expand-file-name "/opt/plantuml/plantuml.jar"))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+   '((dot . t)))
+
 (provide 'ts-org)

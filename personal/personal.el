@@ -147,7 +147,7 @@
 (require 'ts-defuns)
 (require 'ts-bindings)
 (require 'ts-org)
-;; (require 'ts-javascript)
+(require 'ts-javascript)
 (require 'ts-clojure)
 (require 'ts-haskell)
 (require 'ts-scheme)
@@ -166,7 +166,7 @@
 
 ;; (require 'ts-android)
 (require 'ts-go)
-;; (require 'ts-elixir)
+(require 'ts-elixir)
 ;; (require 'ts-html)
 ;; (require 'ts-scala)
 ;; (require 'ts-mail)
@@ -188,3 +188,5 @@
 (add-hook 'makefile-mode-hook
           (lambda ()
             (setq indent-tabs-mode t)))
+(with-eval-after-load 'magit
+  (require 'forge))

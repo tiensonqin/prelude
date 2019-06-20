@@ -27,7 +27,7 @@
     (setq word (read-string (format "Search the dictionary for (default %s): " word)
                             nil nil word))
     ;; (call-process-shell-command (format "flite -voice /opt/voices/cmu_us_rms.flitevox -t %s &" word) nil 0)
-    (call-process-shell-command (format "tts -w '%s' &" word) nil 0)
+    (call-process-shell-command (format "proxychains tts -w '%s' &" word) nil 0)
     (call-process-shell-command (format "grep -q -F '%s' ~/Dropbox/orgs/words || echo '%s' >> ~/Dropbox/orgs/words &" word word) nil 0)
     (set-buffer (get-buffer-create "*sdcv*"))
     (buffer-disable-undo)
@@ -142,12 +142,12 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
 (defun speak ()
   (interactive)
   (write-region (region-beginning) (region-end) "/tmp/speak_content_region")
-  (call-process-shell-command "tts -f /tmp/speak_content_region" nil 0))
+  (call-process-shell-command "proxychains tts -f /tmp/speak_content_region" nil 0))
 
 (defun speak-buffer ()
   (interactive)
   (write-region (point-min) (point-max) "/tmp/speak_content_buffer")
-  (shell-command "tts -f /tmp/speak_content_buffer &"))
+  (shell-command "proxychains tts -f /tmp/speak_content_buffer &"))
 
 (defun clear-comint-buffer ()
   (interactive)

@@ -118,4 +118,10 @@
 
 (setq rtags-use-helm t)
 
+;; Smartparens is broken in `cc-mode' as of Emacs 27. See
+;; <https://github.com/Fuco1/smartparens/issues/963>.
+(when (version<= "27" emacs-version)
+  (dolist (fun '(c-electric-paren c-electric-brace))
+    (add-to-list 'sp--special-self-insert-commands fun)))
+
 (provide 'ts-c)
