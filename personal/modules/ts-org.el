@@ -22,13 +22,13 @@
 
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Sync/orgs/tasks.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/notes/todo.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
-        ("h" "Reading" entry (file+headline "~/Sync/orgs/notes/read.org" "Read")
+        ("h" "Reading" entry (file+headline "~/notes/read.org" "Read")
          "* TODO %?\n  %i\n  %a")))
 
-(setq org-agenda-files (list "~/Sync/orgs/tasks.org"
-                             "~/Sync/orgs/notes/read.org"))
+(setq org-agenda-files (list "~/notes/todo.org"
+                             "~/notes/read.org"))
 
 (setq org-log-done t)
 
@@ -68,5 +68,6 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
    '((dot . t)))
+
 
 (provide 'ts-org)

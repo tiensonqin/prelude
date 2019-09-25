@@ -6,13 +6,13 @@
 ;; (require 'edts-start)
 
 ;; distel
-(add-to-list 'load-path "/usr/local/share/distel/elisp")
-(require 'distel)
-(distel-setup)
-(require 'company-distel)
-(add-to-list 'company-backends 'company-distel)
+;; (add-to-list 'load-path "/usr/local/share/distel/elisp")
+;; (require 'distel)
+;; (distel-setup)
+;; (require 'company-distel)
+;; (add-to-list 'company-backends 'company-distel)
 
-;; prevent annoying hang-on-compile
+;; prevent annoying hang-on-compiledi
 (defvar inferior-erlang-prompt-timeout t)
 ;; default node name to emacs@localhost
 (setq inferior-erlang-machine-options '("-sname" "emacs"))

@@ -270,6 +270,13 @@ Called by `imenu--generic-function'."
 
 (add-hook 'cider-mode-hook #'eldoc-mode)
 
+;; (add-hook 'cider-mode-hook
+;;           '(lambda () (add-hook 'after-save-hook
+;;                                 '(lambda ()
+;;                                    (if (and (boundp 'cider-mode) cider-mode)
+;;                                        (cider-refresh))))))
+
+
 (setq enable-local-variables nil)
 
 (setq nrepl-log-messages t)
@@ -285,5 +292,7 @@ Called by `imenu--generic-function'."
 
 ;; Workaround for https://github.com/clojure-emacs/cider/issues/2408#issuecomment-413768401
 (advice-add #'cider--find-var :around #'jp-around-cider-find-var)
+
+(setq cider-clojure-cli-global-options "-A:dev")
 
 (provide 'ts-clojure)

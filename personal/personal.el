@@ -1,4 +1,4 @@
-(prelude-require-packages '(auto-complete company js2-mode ag multiple-cursors geiser markdown-mode helm-swoop helm-gtags imenu-list solarized-theme))
+(prelude-require-packages '(auto-complete company js2-mode ag multiple-cursors geiser markdown-mode helm-swoop helm-gtags imenu-list solarized-theme direnv))
 ;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 ;; (add-to-list 'package-archives '("elpa" . "http://elpa.gnu.org/packages/"))
 
@@ -10,6 +10,7 @@
 ;; (disable-theme 'zenburn)
 ;; (require 'color-theme)
 (load-theme 'solarized-dark)
+;; (load-theme 'zerodark)
 ;; (load-theme 'zenburn)
 
 ;; Gotta do UTF-8
@@ -35,8 +36,9 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; set default fonts
-(set-frame-font "Monaco-13")
-(setq default-frame-alist '((font . "Monaco-13")))
+;; (set-frame-font "Inconsolata-19")
+(set-frame-font "Monaco-18")
+(setq default-frame-alist '((font . "Monaco-18")))
 
 (setq package-check-signature nil)
 
@@ -165,7 +167,7 @@
 ;; (setq erc-autojoin-channels-alist '(("freenode.net" "#ocaml")))
 
 ;; (require 'ts-android)
-(require 'ts-go)
+;; (require 'ts-go)
 (require 'ts-elixir)
 ;; (require 'ts-html)
 ;; (require 'ts-scala)
@@ -190,3 +192,8 @@
             (setq indent-tabs-mode t)))
 (with-eval-after-load 'magit
   (require 'forge))
+
+(require 'direnv)
+
+;; (global-disable-mouse-mode)
+;; (setq visible-cursor nil)
