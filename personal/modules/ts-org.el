@@ -10,10 +10,10 @@
 
 
 ;; Set to the location of your Org files on your local system
-(setq org-directory "~/Sync/orgs")
+(setq org-directory "~/notes")
 
 (setq org-todo-keywords
-      '((sequence "TODO" "DONE")))
+      '((sequence "TODO" "DOING" "WAITING" "DONE" "CANCELED")))
 
 
 (add-hook 'org-mode-hook
