@@ -39,7 +39,6 @@
 ;; (set-frame-font "Inconsolata-19")
 (set-frame-font "Monaco-15")
 (setq default-frame-alist '((font . "Monaco-15")))
-
 (setq package-check-signature nil)
 
 ;;; registers
@@ -151,8 +150,8 @@
 (require 'ts-org)
 (require 'ts-javascript)
 (require 'ts-clojure)
-(require 'ts-haskell)
-(require 'ts-scheme)
+;; (require 'ts-haskell)
+;; (require 'ts-scheme)
 (require 'ts-java)
 (require 'ts-erlang)
 (require 'ts-image)

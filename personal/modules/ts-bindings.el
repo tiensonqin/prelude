@@ -33,4 +33,6 @@
 ;; (global-set-key (kbd "C-c C-s") 'speak)
 (global-set-key (kbd "s-e") 'mc/edit-lines)
 
+(global-set-key (kbd "C-x p") 'org-cliplink)
+
 (provide 'ts-bindings)

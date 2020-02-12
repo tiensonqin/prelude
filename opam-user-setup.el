@@ -120,9 +120,6 @@
 
 (opam-auto-tools-setup)
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
-;; ## added by OPAM user-setup for emacs / tuareg ## cfa3d0b17ff00fe1e3f2d0d73b76f886 ## you can edit, but keep this line
-;; Set to autoload tuareg from its original switch when not found in current
-;; switch (don't load tuareg-site-file as it adds unwanted load-paths)
 (defun opam-tuareg-autoload (fct file doc args)
   (let ((load-path (cons "/home/tienson/.opam/4.08.1/share/emacs/site-lisp" load-path)))
     (load file))

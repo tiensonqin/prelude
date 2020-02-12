@@ -11,7 +11,6 @@
 
 ;; Set to the location of your Org files on your local system
 (setq org-directory "~/notes")
-
 ;; (setq org-todo-keywords '((sequence "TODO(t)" "DOING(D)" "|" "WAITING(w)" "CANCELLED(c)" "DONE(d)")))
 
 (setq org-todo-keywords
@@ -27,11 +26,11 @@
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/notes/tasks.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
-        ("h" "Reading" entry (file+headline "~/notes/read.org" "Read")
-         "* TODO %?\n  %i\n  %a")))
+        ))
 
-(setq org-agenda-files (list "~/notes/tasks.org"
-                             "~/notes/read.org"))
+(setq org-agenda-files (list "~/notes/tasks.org"))
+
+(setq org-log-done t)
 
 (global-set-key "\C-cc" 'org-capture)
 
