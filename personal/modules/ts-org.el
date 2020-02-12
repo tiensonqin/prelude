@@ -10,10 +10,13 @@
 
 
 ;; Set to the location of your Org files on your local system
-(setq org-directory "~/Sync/orgs")
+(setq org-directory "~/notes")
+
+;; (setq org-todo-keywords '((sequence "TODO(t)" "DOING(D)" "|" "WAITING(w)" "CANCELLED(c)" "DONE(d)")))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "DONE")))
+      '((sequence "TODO(t!)" "DOING(D!)" "WAIT(w!)" "|" "DONE(d!)" "CANCELED(c@)")))
+(setq org-log-done t)
 
 
 (add-hook 'org-mode-hook
@@ -22,15 +25,13 @@
 
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Sync/orgs/tasks.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/notes/tasks.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
-        ("h" "Reading" entry (file+headline "~/Sync/orgs/notes/read.org" "Read")
+        ("h" "Reading" entry (file+headline "~/notes/read.org" "Read")
          "* TODO %?\n  %i\n  %a")))
 
-(setq org-agenda-files (list "~/Sync/orgs/tasks.org"
-                             "~/Sync/orgs/notes/read.org"))
-
-(setq org-log-done t)
+(setq org-agenda-files (list "~/notes/tasks.org"
+                             "~/notes/read.org"))
 
 (global-set-key "\C-cc" 'org-capture)
 
@@ -68,5 +69,15 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
    '((dot . t)))
+
+(defun my/log-todo-creation-date (&rest ignore)
+  "Log TODO creation time in the property drawer under the key 'CREATED'."
+  (when (and (org-get-todo-state)
+             (not (org-entry-get nil "CREATED")))
+    (org-entry-put nil "CREATED" (format-time-string (cdr org-time-stamp-formats)))))
+
+(advice-add 'org-insert-todo-heading :after #'my/log-todo-creation-date)
+(advice-add 'org-insert-todo-heading-respect-content :after #'my/log-todo-creation-date)
+(advice-add 'org-insert-todo-subheading :after #'my/log-todo-creation-date)
 
 (provide 'ts-org)

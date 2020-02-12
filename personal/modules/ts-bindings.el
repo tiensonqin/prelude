@@ -11,6 +11,7 @@
 (global-set-key (kbd "M-g") 'goto-line)
 
 (global-set-key (kbd "C-c C-d m") 'erlang-man-module)
+(global-set-key (kbd "C-c C-r") 'rtags-references-tree)
 ;; (global-set-key (kbd "C-c C-s") 'helm-swoop)
 (global-set-key (kbd "M-U") (lambda () (interactive)
                                   (helm-swoop :$query "defc")))

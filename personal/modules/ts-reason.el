@@ -29,9 +29,9 @@
                               (add-hook 'before-save-hook 'refmt-before-save)
                               (merlin-mode)
 
-                              (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
-                              (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)
-                              (define-key merlin-mode-map (kbd "M-t") 'merlin-type-enclosing)
+                              ;; (define-key merlin-mode-map (kbd "M-.") 'merlin-locate)
+                              ;; (define-key merlin-mode-map (kbd "M-,") 'merlin-pop-stack)
+                              ;; (define-key merlin-mode-map (kbd "M-t") 'merlin-type-enclosing)
 
      ;;                          (defun merlin-switch ()
    ;;                              (interactive)
@@ -59,5 +59,12 @@
 ;;   (if iedit-mode (iedit-mode)
 ;;     (merlin-iedit-occurrences)))
 ;; (define-key merlin-mode-map (kbd "C-c C-e") 'evil-custom-merlin-iedit)
+
+;; (lsp-register-client
+;;  (make-lsp-client :new-connection (lsp-stdio-connection "/usr/local/bin/reason-language-server")
+;;                   :major-modes '(reason-mode)
+;;                   :priority 1
+;;                   :notification-handlers (ht ("client/registerCapability" 'ignore))
+;;                   :server-id 'ocaml-ls))
 
 (provide 'ts-reason)

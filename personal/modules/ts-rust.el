@@ -8,6 +8,7 @@
             (cargo-minor-mode)
             (local-set-key (kbd "C-c C-t")
                            'racer-describe)
+            (whitespace-cleanup)
             ))
 (add-hook 'racer-mode-hook #'eldoc-mode)
 (add-hook 'racer-mode-hook #'company-mode)

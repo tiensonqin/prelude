@@ -77,11 +77,6 @@
            (ig-move-line-to-column (+ current tab-width))))))
 
 
-(add-hook 'sql-mode-hook
-          (lambda ()
-            (load-library "sql-indent")
-            (setq sql-indent-offset 2)
-            (make-local-variable 'indent-line-function)
-            (setq indent-line-function 'ig-indent-sql)))
+(add-hook 'sql-mode-hook 'sqlind-minor-mode)
 
 (provide 'ts-sql)
