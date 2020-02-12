@@ -172,4 +172,8 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
         (setenv var value))
       (setq lst (cdr lst)))))
 
+(defun git-sync ()
+  (interactive)
+  (shell-command "git-sync"))
+
 (provide 'ts-defuns)

@@ -6,6 +6,8 @@
 (global-set-key (kbd "s-i") 'kid-sdcv-to-buffer)
 ;; (global-set-key (kbd "s-i") 'osx-dictionary-search-pointer)
 
+(global-set-key (kbd "s-c") 'git-sync)
+
 (global-set-key (kbd "M-i") 'helm-imenu)
 
 (global-set-key (kbd "M-g") 'goto-line)
