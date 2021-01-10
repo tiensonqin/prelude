@@ -11,7 +11,7 @@
 ;; Enable LSP automatically for Erlang files
 (add-hook 'erlang-mode-hook #'lsp)
 
-(push 'company-lsp company-backends)
+;; (push 'company-lsp company-backends)
 
 ;; Override the key bindings from erlang-mode to use LSP for completion
 (eval-after-load 'erlang

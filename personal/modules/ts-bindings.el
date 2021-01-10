@@ -36,5 +36,6 @@
 (global-set-key (kbd "s-e") 'mc/edit-lines)
 
 (global-set-key (kbd "C-x p") 'org-cliplink)
+(global-set-key (kbd "C-h C-e") 'cider-eval-expression-at-point-in-repl)
 
 (provide 'ts-bindings)

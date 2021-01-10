@@ -117,7 +117,7 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
     ;; Strip excess whitespace
     (while (string-match "\\`\s+\\|\n+\\'" form)
       (setq form (replace-match "" t t form)))
-    (set-buffer (cider-find-or-create-repl-buffer))
+    (cider-switch-to-repl-buffer)
     (goto-char (point-max))
     (insert form)
     (cider-repl-return)))
@@ -175,5 +175,16 @@ In the shell command, the file(s) will be substituted wherever a '%' is."
 (defun git-sync ()
   (interactive)
   (shell-command "git-sync"))
+
+(defun org-toggle-link-display ()
+  "Toggle the literal or descriptive display of links."
+  (interactive)
+  (if org-descriptive-links
+      (progn (org-remove-from-invisibility-spec '(org-link))
+             (org-restart-font-lock)
+             (setq org-descriptive-links nil))
+    (progn (add-to-invisibility-spec '(org-link))
+           (org-restart-font-lock)
+           (setq org-descriptive-links t))))
 
 (provide 'ts-defuns)

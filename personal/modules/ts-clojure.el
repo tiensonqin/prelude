@@ -295,4 +295,13 @@ Called by `imenu--generic-function'."
 
 (setq cider-clojure-cli-global-options "-A:dev")
 
+(defun cljfmt ()
+  (when (or (eq major-mode 'clojure-mode)
+            (eq major-mode 'clojurescript-mode))
+    (shell-command-to-string (format "cljfmt %s" buffer-file-name))
+    (revert-buffer :ignore-auto :noconfirm)))
+
+;; (add-hook 'after-save-hook #'cljfmt)
+;; (remove-hook 'after-save-hook #'cljfmt)
+
 (provide 'ts-clojure)

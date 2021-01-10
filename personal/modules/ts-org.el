@@ -14,7 +14,7 @@
 ;; (setq org-todo-keywords '((sequence "TODO(t)" "DOING(D)" "|" "WAITING(w)" "CANCELLED(c)" "DONE(d)")))
 
 (setq org-todo-keywords
-      '((sequence "TODO(t!)" "DOING(D!)" "WAIT(w!)" "|" "DONE(d!)" "CANCELED(c@)")))
+      '((sequence "NOW(n!)" "LATER(l!)" "|" "DONE(d!)" "CANCELED(c@)")))
 (setq org-log-done t)
 
 
@@ -25,7 +25,7 @@
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/notes/tasks.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
+         "* NOW %?\n  %i\n  %a")
         ))
 
 (setq org-agenda-files (list "~/notes/tasks.org"))
@@ -78,5 +78,10 @@
 (advice-add 'org-insert-todo-heading :after #'my/log-todo-creation-date)
 (advice-add 'org-insert-todo-heading-respect-content :after #'my/log-todo-creation-date)
 (advice-add 'org-insert-todo-subheading :after #'my/log-todo-creation-date)
+
+;; org roam
+(setq org-roam-directory "~/codes/projects/org-roam-example")
+
+;; (add-hook 'after-init-hook 'org-roam-mode)
 
 (provide 'ts-org)

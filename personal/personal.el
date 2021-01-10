@@ -4,7 +4,7 @@
 
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
+             '("melpa" . "http://melpa.org/packages/"))
 ;; (add-to-list 'package-archives
 ;;              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ;; (disable-theme 'zenburn)
@@ -167,7 +167,7 @@
 
 ;; (require 'ts-android)
 ;; (require 'ts-go)
-(require 'ts-elixir)
+;; (require 'ts-elixir)
 ;; (require 'ts-html)
 ;; (require 'ts-scala)
 ;; (require 'ts-mail)
